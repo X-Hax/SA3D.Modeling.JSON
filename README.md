@@ -1,20 +1,7 @@
-# SA3D.Modeling
-A Sonic Adventure modeling library with support for all game related model formats. Also contains support for various other SEGA based games, although support is not guaranteed.
+# SA3D.Modeling.JSON
+A JSON converter library for all classes and structures in SA3D.Modeling.
 
-## Contents
-| Namespace (SA3D.Modeling.*) 	| Description                                                                                                                          	|
-|-----------------------------	|--------------------------------------------------------------------------------------------------------------------------------------	|
-| File                        	| Model data storage file handlers for select native- and X-Hax custom file-formats.                                                   	|
-| Mesh                        	| Library for handling, reading and writing mesh data.                                                                                 	|
-| Mesh.Basic                  	| Basic mesh data library. Used in SA1 (everything) and SA2 (collision geometry only)                                                  	|
-| Mesh.Chunk                  	| Chunk mesh data library. Used in SA2.                                                                                                	|
-| Mesh.Gamecube               	| Gamecube-like mesh data library. Used in SA2B and its ports.                                                                         	|
-| Mesh.Buffer                 	| SA3D internal mesh format. Used for conversion and rendering purposes. Is a simplified version of Chunk and mixes in Basic elements. 	|
-| Mesh.Weighted               	| SA3D internal mesh format. Used only for conversion purposes, as it is more in line with most modern mesh formats.                   	|
-| ObjectData                  	| Library for handling, reading and writing node and geometry container data.                                                          	|
-| Animation                   	| Library for handling, reading and writing animation data.                                                                            	|
-| Structs                     	| Common structure code between all namespaces.                                                                                        	|
-| Strippify                   	| Triangle strip generating and handling code.                                                                                         	|
+Warning: Reading mesh data can be very slow! Improvements may be done in the future
 
 ## Releasing
 !! Requires authorization via the X-Hax organisation
