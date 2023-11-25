@@ -80,7 +80,7 @@ namespace SA3D.Modeling.JSON.Animation
 
 			if(value.TextureListPointer != 0)
 			{
-				writer.WriteString(_textureListPointer, value.TextureListPointer.ToString("X", NumberFormatInfo.InvariantInfo));
+				writer.WriteString(_textureListPointer, value.TextureListPointer.ToString("X", CultureInfo.InvariantCulture));
 			}
 
 			writer.WritePropertyName(_model);

@@ -69,7 +69,7 @@ namespace SA3D.Modeling.JSON.Mesh.Gamecube.Parameters
 		/// <inheritdoc/>
 		protected override void WriteTargetValues(Utf8JsonWriter writer, GCLightingParameter value, JsonSerializerOptions options)
 		{
-			writer.WriteString(_lightingAttributes, value.LightingAttributes.ToString("X", NumberFormatInfo.InvariantInfo));
+			writer.WriteString(_lightingAttributes, value.LightingAttributes.ToString("X", CultureInfo.InvariantCulture));
 			writer.WriteNumber(_shadowStencil, value.ShadowStencil);
 			writer.WriteNumber(_unknown1, value.Unknown1);
 			writer.WriteNumber(_unknown2, value.Unknown2);

@@ -109,7 +109,7 @@ namespace SA3D.Modeling.JSON.ObjectData
 
 			if(value.TexListPtr != 0)
 			{
-				writer.WriteString(_texListPtr, value.TexListPtr.ToString("X", NumberFormatInfo.InvariantInfo));
+				writer.WriteString(_texListPtr, value.TexListPtr.ToString("X", CultureInfo.InvariantCulture));
 			}
 
 			if(value.Attributes != default)

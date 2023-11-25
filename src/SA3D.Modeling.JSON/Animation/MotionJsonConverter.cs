@@ -13,7 +13,7 @@ namespace SA3D.Modeling.JSON.Animation
 	public class MotionJsonConverter : SimpleJsonObjectConverter<Motion>
 	{
 		private const string _label = nameof(Motion.Label);
-		private const string _modelCount = nameof(Motion.ModelCount);
+		private const string _nodeCount = nameof(Motion.NodeCount);
 		private const string _interpolationMode = nameof(Motion.InterpolationMode);
 		private const string _shortRot = nameof(Motion.ShortRot);
 		private const string _keyframes = nameof(Motion.Keyframes);
@@ -24,7 +24,7 @@ namespace SA3D.Modeling.JSON.Animation
 		public override ReadOnlyDictionary<string, PropertyDefinition> PropertyDefinitions { get; } = new(new Dictionary<string, PropertyDefinition>()
 		{
 			{ _label, new(PropertyTokenType.String, string.Empty) },
-			{ _modelCount, new(PropertyTokenType.Number, 0u) },
+			{ _nodeCount, new(PropertyTokenType.Number, 0u) },
 			{ _interpolationMode, new(PropertyTokenType.String, InterpolationMode.Linear) },
 			{ _shortRot, new(PropertyTokenType.Bool, false) },
 			{ _manualKeyframeTypes, new(PropertyTokenType.String | PropertyTokenType.Number, default(KeyframeAttributes)) },
@@ -38,7 +38,7 @@ namespace SA3D.Modeling.JSON.Animation
 			{
 				case _label:
 					return reader.GetString();
-				case _modelCount:
+				case _nodeCount:
 					return reader.GetUInt32();
 				case _interpolationMode:
 					return JsonSerializer.Deserialize<InterpolationMode>(ref reader, options);
@@ -59,7 +59,7 @@ namespace SA3D.Modeling.JSON.Animation
 			Motion result = new()
 			{
 				Label = (string)values[_label]!,
-				ModelCount = (uint)values[_modelCount]!,
+				NodeCount = (uint)values[_nodeCount]!,
 				InterpolationMode = (InterpolationMode)values[_interpolationMode]!,
 				ShortRot = (bool)values[_shortRot]!,
 				ManualKeyframeTypes = (KeyframeAttributes)values[_manualKeyframeTypes]!,
@@ -83,9 +83,9 @@ namespace SA3D.Modeling.JSON.Animation
 		{
 			writer.WriteString(_label, value.Label);
 
-			if(value.ModelCount != 0)
+			if(value.NodeCount != 0)
 			{
-				writer.WriteNumber(_modelCount, value.ModelCount);
+				writer.WriteNumber(_nodeCount, value.NodeCount);
 			}
 
 			if(value.InterpolationMode != InterpolationMode.Linear)

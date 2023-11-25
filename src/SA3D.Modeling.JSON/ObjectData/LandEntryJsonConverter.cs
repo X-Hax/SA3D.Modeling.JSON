@@ -72,7 +72,7 @@ namespace SA3D.Modeling.JSON.ObjectData
 		{
 			if(value.BlockBit != 0)
 			{
-				writer.WriteString(_blockBit, value.BlockBit.ToString("X", NumberFormatInfo.InvariantInfo));
+				writer.WriteString(_blockBit, value.BlockBit.ToString("X", CultureInfo.InvariantCulture));
 			}
 
 			if(value.Unknown != 0)

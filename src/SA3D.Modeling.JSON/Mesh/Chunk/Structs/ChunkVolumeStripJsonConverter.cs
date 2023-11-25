@@ -103,7 +103,7 @@ namespace SA3D.Modeling.JSON.Mesh.Chunk.Structs
 					string[] attributeArray = new string[3];
 					for(int j = 0; j < 3; j++)
 					{
-						attributeArray[j] = value.TriangleAttributes[i, j].ToString("X", NumberFormatInfo.InvariantInfo);
+						attributeArray[j] = value.TriangleAttributes[i, j].ToString("X", CultureInfo.InvariantCulture);
 					}
 				}
 

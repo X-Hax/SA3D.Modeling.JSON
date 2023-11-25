@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Numerics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -20,16 +21,25 @@ namespace SA3D.Modeling.JSON.Structs
 
 			string[] values = reader.GetString()!.Split(' ');
 			return new(
-				float.Parse(values[0]),
-				float.Parse(values[1]),
-				float.Parse(values[2]),
-				float.Parse(values[3]));
+				float.Parse(values[0], CultureInfo.InvariantCulture),
+				float.Parse(values[1], CultureInfo.InvariantCulture),
+				float.Parse(values[2], CultureInfo.InvariantCulture),
+				float.Parse(values[3], CultureInfo.InvariantCulture));
 		}
 
 		/// <inheritdoc/>
 		public override void Write(Utf8JsonWriter writer, Vector4 value, JsonSerializerOptions options)
 		{
-			writer.WriteStringValue($"{value.X:F4} {value.Y:F4} {value.Z:F4} {value.W:F4}");
+            string output =
+                value.X.ToString("F4", CultureInfo.InvariantCulture)
+                + ' '
+                + value.Y.ToString("F4", CultureInfo.InvariantCulture)
+                + ' '
+                + value.Z.ToString("F4", CultureInfo.InvariantCulture)
+                + ' '
+                + value.W.ToString("F4", CultureInfo.InvariantCulture);
+
+            writer.WriteStringValue(output);
 		}
 	}
 }

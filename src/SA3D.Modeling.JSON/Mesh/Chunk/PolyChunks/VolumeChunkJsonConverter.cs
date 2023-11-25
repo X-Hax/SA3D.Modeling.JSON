@@ -92,7 +92,7 @@ namespace SA3D.Modeling.JSON.Mesh.Chunk.PolyChunks
 		{
 			if(value.Attributes != 0)
 			{
-				writer.WriteString(_attributes, value.Attributes.ToString("X", NumberFormatInfo.InvariantInfo));
+				writer.WriteString(_attributes, value.Attributes.ToString("X", CultureInfo.InvariantCulture));
 			}
 
 			if(value.PolygonAttributeCount != 0)

@@ -123,7 +123,7 @@ namespace SA3D.Modeling.JSON.Mesh.Basic
 
 			if(value.PolyAttributes != 0)
 			{
-				writer.WriteString(_polyAttributes, value.PolyAttributes.ToString("X", NumberFormatInfo.InvariantInfo));
+				writer.WriteString(_polyAttributes, value.PolyAttributes.ToString("X", CultureInfo.InvariantCulture));
 			}
 
 			if(value.Normals != null)

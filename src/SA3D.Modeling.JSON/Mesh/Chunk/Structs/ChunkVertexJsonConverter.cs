@@ -88,7 +88,7 @@ namespace SA3D.Modeling.JSON.Mesh.Chunk.Structs
 
 			if(value.Attributes != ChunkVertex.DefaultValues.Attributes)
 			{
-				writer.WriteString(_attributes, value.Attributes.ToString("X", NumberFormatInfo.InvariantInfo));
+				writer.WriteString(_attributes, value.Attributes.ToString("X", CultureInfo.InvariantCulture));
 			}
 		}
 	}

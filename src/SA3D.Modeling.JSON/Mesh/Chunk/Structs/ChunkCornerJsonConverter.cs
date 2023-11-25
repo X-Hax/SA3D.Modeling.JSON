@@ -106,17 +106,17 @@ namespace SA3D.Modeling.JSON.Mesh.Chunk.Structs
 
 			if(value.Attributes1 != ChunkCorner.DefaultValues.Attributes1)
 			{
-				writer.WriteString(_attributes1, value.Attributes1.ToString("X", NumberFormatInfo.InvariantInfo));
+				writer.WriteString(_attributes1, value.Attributes1.ToString("X", CultureInfo.InvariantCulture));
 			}
 
 			if(value.Attributes2 != ChunkCorner.DefaultValues.Attributes2)
 			{
-				writer.WriteString(_attributes2, value.Attributes2.ToString("X", NumberFormatInfo.InvariantInfo));
+				writer.WriteString(_attributes2, value.Attributes2.ToString("X", CultureInfo.InvariantCulture));
 			}
 
 			if(value.Attributes3 != ChunkCorner.DefaultValues.Attributes3)
 			{
-				writer.WriteString(_attributes3, value.Attributes3.ToString("X", NumberFormatInfo.InvariantInfo));
+				writer.WriteString(_attributes3, value.Attributes3.ToString("X", CultureInfo.InvariantCulture));
 			}
 		}
 	}
