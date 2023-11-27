@@ -23,7 +23,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="SA3D.Modeling" Version="1.0.6" />
+		<PackageReference Include="SA3D.Modeling" Version="1.0.7" />
 	</ItemGroup>
 
 
