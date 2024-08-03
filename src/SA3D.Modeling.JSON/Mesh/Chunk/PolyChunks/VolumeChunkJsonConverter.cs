@@ -52,15 +52,15 @@ namespace SA3D.Modeling.JSON.Mesh.Chunk.PolyChunks
 
 					if(type == PolyChunkType.Volume_Polygon3)
 					{
-						return JsonSerializer.Deserialize<ChunkVolumeTriangle[]>(ref reader, options)!.Cast<IChunkVolumePolygon[]>().ToArray();
+						return JsonSerializer.Deserialize<ChunkVolumeTriangle[]>(ref reader, options)!.Cast<IChunkVolumePolygon>().ToArray();
 					}
 					else if(type == PolyChunkType.Volume_Polygon4)
 					{
-						return JsonSerializer.Deserialize<ChunkVolumeQuad[]>(ref reader, options)!.Cast<IChunkVolumePolygon[]>().ToArray();
+						return JsonSerializer.Deserialize<ChunkVolumeQuad[]>(ref reader, options)!.Cast<IChunkVolumePolygon>().ToArray();
 					}
 					else if(type == PolyChunkType.Volume_Strip)
 					{
-						return JsonSerializer.Deserialize<ChunkVolumeStrip[]>(ref reader, options)!.Cast<IChunkVolumePolygon[]>().ToArray();
+						return JsonSerializer.Deserialize<ChunkVolumeStrip[]>(ref reader, options)!.Cast<IChunkVolumePolygon>().ToArray();
 					}
 
 					throw new InvalidOperationException("Cannot be reached; If reached, volume type somehow invalid.");

@@ -130,7 +130,6 @@ namespace SA3D.Modeling.JSON.Animation
 				JsonSerializer.Serialize(writer, target, options);
 			}
 
-
 			writeKeyframes(_position, value.Position);
 			writeKeyframes(_eulerRotation, value.EulerRotation);
 			writeKeyframes(_scale, value.Scale);

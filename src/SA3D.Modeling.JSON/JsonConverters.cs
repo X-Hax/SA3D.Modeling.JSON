@@ -28,110 +28,112 @@ namespace SA3D.Modeling.JSON
 		/// <param name="options">The options to add to.</param>
 		public static void AddToOptions(JsonSerializerOptions options)
 		{
-			JsonConverter[] converters = new JsonConverter[]
-			{
+            JsonConverter[] converters =
+            [
 				// General
 				new JsonStringEnumConverter(),
 
 				// File
 				new MetaDataJsonConverter(),
-				new ModelFileJsonConverter(),
-				new LevelFileJsonConverter(),
-				new AnimationFileJsonConverter(),
+                new ModelFileJsonConverter(),
+                new LevelFileJsonConverter(),
+                new AnimationFileJsonConverter(),
+                new TextureNameJsonConverter(),
+                new TextureNameListJsonConverter(),
 
 				// ObjectData
 				new NodeJsonConverter(),
-				new LandEntryJsonConverter(),
-				new LandTableJsonConverter(),
+                new LandEntryJsonConverter(),
+                new LandTableJsonConverter(),
 
 				// Animation
 				new KeyframesJsonConverter(),
-				new LandEntryMotionJsonConverter(),
-				new MotionJsonConverter(),
-				new NodeMotionJsonConverter(),
-				new SpotlightJsonConverter(),
+                new LandEntryMotionJsonConverter(),
+                new MotionJsonConverter(),
+                new NodeMotionJsonConverter(),
+                new SpotlightJsonConverter(),
 
 				// Mesh
 				new AttachJsonConverter(),
 
 				// Mesh.Buffer
 				new BufferMeshJsonConverter(),
-				new BufferMaterialJsonConverter(),
-				new BufferCornerJsonConverter(),
-				new BufferVertexJsonConverter(),
+                new BufferMaterialJsonConverter(),
+                new BufferCornerJsonConverter(),
+                new BufferVertexJsonConverter(),
 
 				// Mesh.Weighted
 				new WeightedMeshJsonConverter(),
-				new WeightedVertexJsonConverter(),
+                new WeightedVertexJsonConverter(),
 
 				// Mesh.Basic
 				new BasicAttachJsonConverter(),
-				new BasicMaterialJsonConverter(),
-				new BasicMeshJsonConverter(),
-				new BasicTriangleJsonConverter(),
-				new BasicQuadJsonConverter(),
-				new BasicMultiPolygonJsonConverter(),
-				new BasicPolygonJsonConverter(),
+                new BasicMaterialJsonConverter(),
+                new BasicMeshJsonConverter(),
+                new BasicTriangleJsonConverter(),
+                new BasicQuadJsonConverter(),
+                new BasicMultiPolygonJsonConverter(),
+                new BasicPolygonJsonConverter(),
 
 				// Mesh.Chunk
 				new ChunkAttachJsonConverter(),
-				new VertexChunkJsonConverter(),
-				new PolyChunkJsonConverter(),
+                new VertexChunkJsonConverter(),
+                new PolyChunkJsonConverter(),
 
 				// Mesh.Chunk.Structs
 				new ChunkCornerJsonConverter(),
-				new ChunkStripJsonConverter(),
-				new ChunkVertexJsonConverter(),
-				new ChunkVolumePolygonJsonConverter(),
-				new ChunkVolumeQuadJsonConverter(),
-				new ChunkVolumeStripJsonConverter(),
-				new ChunkVolumeTriangleJsonConverter(),
+                new ChunkStripJsonConverter(),
+                new ChunkVertexJsonConverter(),
+                new ChunkVolumePolygonJsonConverter(),
+                new ChunkVolumeQuadJsonConverter(),
+                new ChunkVolumeStripJsonConverter(),
+                new ChunkVolumeTriangleJsonConverter(),
 
 				// Mesh.Chunk.PolyChunks
 				new BlendAlphaChunkJsonConverter(),
-				new CacheListChunkJsonConverter(),
-				new DrawListChunkJsonConverter(),
-				new SpecularExponentChunkJsonConverter(),
-				new MipmapDistanceMultiplierChunkJsonConverter(),
-				new MaterialBumpChunkJsonConverter(),
-				new TextureChunkJsonConverter(),
-				new MaterialChunkJsonConverter(),
-				new StripChunkJsonConverter(),
-				new VolumeChunkJsonConverter(),
+                new CacheListChunkJsonConverter(),
+                new DrawListChunkJsonConverter(),
+                new SpecularExponentChunkJsonConverter(),
+                new MipmapDistanceMultiplierChunkJsonConverter(),
+                new MaterialBumpChunkJsonConverter(),
+                new TextureChunkJsonConverter(),
+                new MaterialChunkJsonConverter(),
+                new StripChunkJsonConverter(),
+                new VolumeChunkJsonConverter(),
 
 				// Mesh.Gamecube
 				new GCAttachJsonConverter(),
-				new GCVertexSetJsonConverter(),
-				new GCMeshJsonConverter(),
-				new GCPolygonJsonConverter(),
-				new GCCornerJsonConverter(),
+                new GCVertexSetJsonConverter(),
+                new GCMeshJsonConverter(),
+                new GCPolygonJsonConverter(),
+                new GCCornerJsonConverter(),
 
 				// Mesh.Gamecube.Parameters
 				new GCParameterJsonConverter(),
-				new GCAmbientColorParameterJsonConverter(),
-				new GCDiffuseColorParameterJsonConverter(),
-				new GCSpecularColorParameterJsonConverter(),
-				new GCBlendAlphaParameterJsonConverter(),
-				new GCIndexFormatParameterJsonConverter(),
-				new GCLightingParameterJsonConverter(),
-				new GCTexCoordParameterJsonConverter(),
-				new GCTextureParameterJsonConverter(),
-				new GCUnknownParameterJsonConverter(),
-				new GCVertexFormatParameterJsonConverter(),
+                new GCAmbientColorParameterJsonConverter(),
+                new GCDiffuseColorParameterJsonConverter(),
+                new GCSpecularColorParameterJsonConverter(),
+                new GCBlendAlphaParameterJsonConverter(),
+                new GCIndexFormatParameterJsonConverter(),
+                new GCLightingParameterJsonConverter(),
+                new GCTexCoordParameterJsonConverter(),
+                new GCTextureParameterJsonConverter(),
+                new GCUnknownParameterJsonConverter(),
+                new GCVertexFormatParameterJsonConverter(),
 
 				// Structs
 				new ColorJsonConverter(),
-				new Vector2JsonConverter(),
-				new Vector3JsonConverter(),
-				new Vector4JsonConverter(),
-				new QuaternionJsonConverter(),
-				new Matrix4x4JsonConverter(),
-				new BoundsJsonConverter(),
+                new Vector2JsonConverter(),
+                new Vector3JsonConverter(),
+                new Vector4JsonConverter(),
+                new QuaternionJsonConverter(),
+                new Matrix4x4JsonConverter(),
+                new BoundsJsonConverter(),
 
-				new ILabeledArrayJsonConverterFactory(),
-				new LabeledArrayJsonConverterFactory(),
-				new LabeledReadOnlyArrayJsonConverterFactory()
-			};
+                new ILabeledArrayJsonConverterFactory(),
+                new LabeledArrayJsonConverterFactory(),
+                new LabeledReadOnlyArrayJsonConverterFactory()
+            ];
 
 			foreach(JsonConverter converter in converters)
 			{

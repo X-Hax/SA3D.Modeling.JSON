@@ -1,0 +1,12 @@
+﻿override SA3D.Modeling.JSON.File.TextureNameJsonConverter.Create(System.Collections.ObjectModel.ReadOnlyDictionary<string!, object?>! values) -> SA3D.Texturing.Texname.TextureName!
+override SA3D.Modeling.JSON.File.TextureNameJsonConverter.PropertyDefinitions.get -> System.Collections.ObjectModel.ReadOnlyDictionary<string!, SA3D.Modeling.JSON.JsonBase.PropertyDefinition>!
+override SA3D.Modeling.JSON.File.TextureNameJsonConverter.ReadValue(ref System.Text.Json.Utf8JsonReader reader, string! propertyName, System.Collections.ObjectModel.ReadOnlyDictionary<string!, object?>! values, System.Text.Json.JsonSerializerOptions! options) -> object?
+override SA3D.Modeling.JSON.File.TextureNameJsonConverter.WriteValues(System.Text.Json.Utf8JsonWriter! writer, SA3D.Texturing.Texname.TextureName! value, System.Text.Json.JsonSerializerOptions! options) -> void
+override SA3D.Modeling.JSON.File.TextureNameListJsonConverter.Create(System.Collections.ObjectModel.ReadOnlyDictionary<string!, object?>! values) -> SA3D.Texturing.Texname.TextureNameList!
+override SA3D.Modeling.JSON.File.TextureNameListJsonConverter.PropertyDefinitions.get -> System.Collections.ObjectModel.ReadOnlyDictionary<string!, SA3D.Modeling.JSON.JsonBase.PropertyDefinition>!
+override SA3D.Modeling.JSON.File.TextureNameListJsonConverter.ReadValue(ref System.Text.Json.Utf8JsonReader reader, string! propertyName, System.Collections.ObjectModel.ReadOnlyDictionary<string!, object?>! values, System.Text.Json.JsonSerializerOptions! options) -> object?
+override SA3D.Modeling.JSON.File.TextureNameListJsonConverter.WriteValues(System.Text.Json.Utf8JsonWriter! writer, SA3D.Texturing.Texname.TextureNameList! value, System.Text.Json.JsonSerializerOptions! options) -> void
+SA3D.Modeling.JSON.File.TextureNameJsonConverter
+SA3D.Modeling.JSON.File.TextureNameJsonConverter.TextureNameJsonConverter() -> void
+SA3D.Modeling.JSON.File.TextureNameListJsonConverter
+SA3D.Modeling.JSON.File.TextureNameListJsonConverter.TextureNameListJsonConverter() -> void

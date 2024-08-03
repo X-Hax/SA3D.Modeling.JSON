@@ -2,6 +2,7 @@
 using SA3D.Modeling.JSON.JsonBase;
 using SA3D.Modeling.ObjectData;
 using SA3D.Modeling.ObjectData.Enums;
+using SA3D.Texturing.Texname;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -17,6 +18,7 @@ namespace SA3D.Modeling.JSON.File
 		private const string _njFile = nameof(ModelFile.NJFile);
 		private const string _format = nameof(ModelFile.Format);
 		private const string _model = nameof(ModelFile.Model);
+        private const string _textureNames = nameof(ModelFile.TextureNames);
 		private const string _metaData = nameof(ModelFile.MetaData);
 
 
@@ -26,6 +28,7 @@ namespace SA3D.Modeling.JSON.File
 			{ _njFile, new(PropertyTokenType.Bool, false) },
 			{ _format, new(PropertyTokenType.String, null) },
 			{ _model, new(PropertyTokenType.Object | PropertyTokenType.String, null) },
+            { _textureNames, new(PropertyTokenType.Object, null) },
 			{ _metaData, new(PropertyTokenType.Object, null) },
 		});
 
@@ -40,7 +43,9 @@ namespace SA3D.Modeling.JSON.File
 					return JsonSerializer.Deserialize<ModelFormat>(ref reader, options);
 				case _model:
 					return JsonSerializer.Deserialize<Node>(ref reader, options);
-				case _metaData:
+                case _textureNames:
+                    return JsonSerializer.Deserialize<TextureNameList>(ref reader, options);
+                case _metaData:
 					return JsonSerializer.Deserialize<MetaData>(ref reader, options);
 				default:
 					throw new InvalidPropertyException();
@@ -58,9 +63,11 @@ namespace SA3D.Modeling.JSON.File
 			Node model = (Node?)values[_model]
 				?? throw new InvalidDataException($"Modelfile requires \"{_model}\" property");
 
+            TextureNameList? textureNames = (TextureNameList?)values[_textureNames];
+
 			MetaData metadata = (MetaData?)values[_metaData] ?? new();
 
-			return new(format, model, metadata, njFile);
+			return new(format, model, metadata, njFile, textureNames);
 		}
 
 		/// <inheritdoc/>
@@ -76,6 +83,12 @@ namespace SA3D.Modeling.JSON.File
 
 			writer.WritePropertyName(_metaData);
 			JsonSerializer.Serialize(writer, value.MetaData, options);
+
+            if(value.TextureNames != null)
+            {
+                writer.WritePropertyName(_textureNames);
+                JsonSerializer.Serialize(writer, value.TextureNames, options);
+            }
 
 			writer.WritePropertyName(_model);
 			JsonSerializer.Serialize(writer, value.Model, options);

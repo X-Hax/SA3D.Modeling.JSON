@@ -3,7 +3,7 @@
 	<Import Project="../SA3D.ProjectConfigurations/NuGet.Build.props" />
 
 	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<RootNamespace>SA3D.Modeling.JSON</RootNamespace>
 	</PropertyGroup>
 
@@ -23,7 +23,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="SA3D.Modeling" Version="1.0.7" />
+		<PackageReference Include="SA3D.Modeling" Version="1.2.0" />
 	</ItemGroup>
 
 

@@ -19,7 +19,8 @@ namespace SA3D.Modeling.JSON.Mesh.Weighted
 		private const string _materials = nameof(WeightedMesh.Materials);
 		private const string _rootIndices = nameof(WeightedMesh.RootIndices);
 		private const string _hasColors = nameof(WeightedMesh.HasColors);
-		private const string _forceVertexColors = nameof(WeightedMesh.ForceVertexColors);
+        private const string _hasNormals = nameof(WeightedMesh.HasNormals);
+        private const string _forceVertexColors = nameof(WeightedMesh.ForceVertexColors);
 		private const string _writeSpecular = nameof(WeightedMesh.WriteSpecular);
 
 
@@ -32,7 +33,8 @@ namespace SA3D.Modeling.JSON.Mesh.Weighted
 			{ _materials, new(PropertyTokenType.Array, null) },
 			{ _rootIndices, new(PropertyTokenType.Array, null) },
 			{ _hasColors, new(PropertyTokenType.Bool, false) },
-			{ _forceVertexColors, new(PropertyTokenType.Bool, false) },
+            { _hasNormals, new(PropertyTokenType.Bool, false) },
+            { _forceVertexColors, new(PropertyTokenType.Bool, false) },
 			{ _writeSpecular, new(PropertyTokenType.Bool, false) },
 		});
 
@@ -52,6 +54,7 @@ namespace SA3D.Modeling.JSON.Mesh.Weighted
 				case _rootIndices:
 					return JsonSerializer.Deserialize<int[]>(ref reader, options);
 				case _hasColors:
+                case _hasNormals:
 				case _forceVertexColors:
 				case _writeSpecular:
 					return reader.GetBoolean();
@@ -76,7 +79,8 @@ namespace SA3D.Modeling.JSON.Mesh.Weighted
 				vertices,
 				triangleSets,
 				materials,
-				(bool)values[_hasColors]!);
+				(bool)values[_hasColors]!,
+                (bool)values[_hasNormals]!);
 
 			result.ForceVertexColors = (bool)values[_forceVertexColors]!;
 			result.WriteSpecular = (bool)values[_writeSpecular]!;
@@ -117,7 +121,12 @@ namespace SA3D.Modeling.JSON.Mesh.Weighted
 				writer.WriteBoolean(_hasColors, value.HasColors);
 			}
 
-			if(value.ForceVertexColors)
+            if(value.HasNormals)
+            {
+                writer.WriteBoolean(_hasNormals, value.HasNormals);
+            }
+
+            if(value.ForceVertexColors)
 			{
 				writer.WriteBoolean(_forceVertexColors, value.ForceVertexColors);
 			}
