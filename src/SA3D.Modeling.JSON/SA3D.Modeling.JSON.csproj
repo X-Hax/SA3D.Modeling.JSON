@@ -11,7 +11,7 @@
 		<Title>JSON converters for SA3D.Modeling</Title>
 		<Product>JSON converters for SA3D.Modeling</Product>
 		<Description>JSON converter library for SA3D.Modeling</Description>
-		<Version>1.0.1</Version>
+		<Version>1.1.0</Version>
 		<RepositoryUrl>https://github.com/X-Hax/SA3D.Modeling.JSON</RepositoryUrl>
 		<PackageProjectUrl>https://github.com/X-Hax/SA3D.Modeling.JSON</PackageProjectUrl>
 		<PackageId>SA3D.Modeling.JSON</PackageId>
