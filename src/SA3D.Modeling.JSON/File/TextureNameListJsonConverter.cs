@@ -1,11 +1,8 @@
 ﻿using SA3D.Common.Lookup;
-using SA3D.Modeling.File;
 using SA3D.Modeling.JSON.JsonBase;
-using SA3D.Modeling.Mesh.Chunk;
 using SA3D.Texturing.Texname;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Reflection.Emit;
 using System.Text.Json;
 
 namespace SA3D.Modeling.JSON.File

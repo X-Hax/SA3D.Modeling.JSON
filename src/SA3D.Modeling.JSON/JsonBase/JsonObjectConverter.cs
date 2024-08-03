@@ -54,7 +54,7 @@ namespace SA3D.Modeling.JSON.JsonBase
 				throw new JsonException($"Expected an object for type \"{typeof(T).Name}\"!");
 			}
 
-			Dictionary<string, object?> values = new();
+			Dictionary<string, object?> values = [];
 			JsonObjectReaderInstance readerInstance = new(PropertyDefinitions, values);
 
 			while(reader.Read() && reader.TokenType != JsonTokenType.EndObject)

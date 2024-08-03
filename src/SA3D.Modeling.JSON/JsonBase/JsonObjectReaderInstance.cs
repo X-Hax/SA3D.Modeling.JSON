@@ -38,7 +38,7 @@ namespace SA3D.Modeling.JSON.JsonBase
 		/// <param name="values">Value storage</param>
 		public JsonObjectReaderInstance(ReadOnlyDictionary<string, PropertyDefinition> propertyDefinitions, Dictionary<string, object?> values)
 		{
-			_currentPropertyDefinitions = new();
+			_currentPropertyDefinitions = [];
 			CurrentPropertyDefinitions = new(_currentPropertyDefinitions);
 			_values = values;
 			Values = new(_values);

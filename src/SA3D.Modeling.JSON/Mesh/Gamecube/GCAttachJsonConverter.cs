@@ -62,7 +62,7 @@ namespace SA3D.Modeling.JSON.Mesh.Gamecube
 			GCVertexSet[] vertexData = (GCVertexSet[]?)values[_vertexData]
 				?? throw new InvalidDataException("GCAttahc requires Vertexdata!");
 
-			Dictionary<GCVertexType, GCVertexSet> vertexDict = new();
+			Dictionary<GCVertexType, GCVertexSet> vertexDict = [];
 
 			foreach(GCVertexSet set in vertexData)
 			{
