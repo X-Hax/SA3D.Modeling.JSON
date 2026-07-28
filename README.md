@@ -1,3 +1,7 @@
+> [!WARNING]
+> This repository is no longer being worked on!<br/>
+> All features have been fully integrated into [SA3D.Modeling version 2.0](https://github.com/X-Hax/SA3D.Modeling)
+
 # SA3D.Modeling.JSON
 A JSON converter library for all classes and structures in SA3D.Modeling.
 
